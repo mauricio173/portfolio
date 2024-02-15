@@ -1,0 +1,729 @@
+.form_pesquisas_topo, .drop_menu {
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Adicione outras propriedades de transição conforme necessário */
+  opacity: 0; /* Começa com opacidade 0 para esconder os elementos */
+  visibility: hidden; /* Começa com visibilidade oculta */
+}
+
+.show {
+  opacity: 1;
+  visibility: visible; /* Torna os elementos visíveis quando a classe show é adicionada */
+}
+______________________________
+ O transition no openModalPesquisa está funcionando corretamente, porém o transition do openDropDownMenu não está funcionando. O que está errado no código abaixo
+       <li
+       class="li_nav_bar2 nav_items"
+       onclick="openDropDownMenu(event)"
+      >
+       <a class="link_drop_menu">MAIS&nbsp;</a>
+       <ul
+       name="menuDrop"
+        class="drop_menu"
+       
+       >
+        <li>
+         <a
+          id="link_sobre"
+          href="#sobre"
+          >SOBRE</a
+         >
+        </li>
+        <li><a>CONTATO</a></li>
+        <li><a>PROJETOS</a></li>
+       </ul>
+      </li>
+ 
+ 
+ 
+  function openModalPesquisa(e) {
+      const form_pesquisas_topo = document.querySelector(".form_pesquisas_topo");
+      const drop_menu = document.querySelector(".drop_menu");
+      const link_drop_menu = document.querySelector(".link_drop_menu");
+
+      form_pesquisas_topo.classList.toggle("show");
+      form_pesquisas_topo.style.display == "none" ? form_pesquisas_topo.style.display = "flex" : form_pesquisas_topo.style.display == "none";
+  if (drop_menu.classList[1] == "shows") {
+       drop_menu.classList.toggle("shows");
+        link_drop_menu.dataset.content = "▶";
+      }
+
+
+      if (drop_menu.style.display == "block") {
+       drop_menu.style = "display: none";
+       link_drop_menu.dataset.content = "▶";
+      }
+     }
+     
+     
+
+     function openDropDownMenu(e) {
+      const li_nav_bar2 = document.querySelector(".li_nav_bar2");
+      const link_drop_menu = document.querySelector(".link_drop_menu");
+      const drop_menu = document.querySelector(".drop_menu");
+      const form_pesquisas_topo = document.querySelector(".form_pesquisas_topo");
+
+      if (form_pesquisas_topo.classList[2] == "show") {
+       form_pesquisas_topo.classList.toggle("show");
+      }
+      
+      drop_menu.classList.toggle("shows");
+      
+    if (drop_menu.classList[1] == "shows") {
+      link_drop_menu.dataset.content = "▼";
+    } else {
+       link_drop_menu.dataset.content = "▶";
+    }
+
+
+     }
+
+     function blink() {
+      const link_drop_menu = document.querySelector(".link_drop_menu");
+      link_drop_menu.dataset.content = "▶";
+     }
+     blink();
+     
+     .drop_menu {
+ transition: display 15s ease, opacity 5s ease, visibility 5s ease; 
+ 
+  opacity: 0; 
+  visibility: hidden; 
+  
+ display: none;
+ justify-content: flex-end;
+}
+.shows {
+ /*display: flex !important;*/
+ display: block !important;
+ opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+______________________________
+Como fazer para mudar a cor das letras digitadas no input type search. Observação somente mudar a cor das letras idênticas as digitadas no input, além disso não deve incluir essa parte da página 
+
+ <header class="container-fluid header">
+    <div
+     class="icone"
+     onclick="functionIcone()"
+    >
+     <img
+      class=""
+      src="ic-logo.png"
+      alt="Logotipo do site"
+     />
+     <h1>Port<span style="color: #f9004d !important">fólio</span></h1>
+
+<script>
+const classSelector = document.querySelector(".icone h1");
+function functionIcone() {
+  classSelector.classList.toggle('showes')
+console.log(classSelector);
+}
+functionIcone();
+</script>
+    </div>
+
+    <div class="imagem">
+     <span> </span>
+     <span> </span>
+    </div>
+
+    <div class="navegador">
+     <ul id="nav">
+      <!-- INÍCIO -->
+      <li class="li_nav_bar1 nav_items">
+       <a>INÍCIO</a>
+      </li>
+
+      <!-- MAIS -->
+      <li
+       class="li_nav_bar2 nav_items"
+       onclick="openDropDownMenu(event)"
+      >
+       <a class="link_drop_menu">MAIS&nbsp;</a>
+       <ul
+       name="menuDrop"
+        class="drop_menu"
+       
+       >
+        <li>
+         <a
+          id="link_sobre"
+          href="#sobre"
+          >SOBRE</a
+         >
+        </li>
+        <li><a>CONTATO</a></li>
+        <li><a>PROJETOS</a></li>
+       </ul>
+      </li>
+
+      <dialog id="modal_sobre">
+       <p
+        style=""
+        class=""
+       >
+        Multiplique os seus resultados, através de um sistema Web integrado. Sua empresa estruturada profissionalmente,
+        perfeita para seus clientes.
+        <br />
+        <input
+         type="button"
+         name="closeSobre"
+         id="closeSobre"
+         value="FECHAR"
+        />
+       </p>
+       <script type="text/javascript">
+        const modalSobre = document.querySelector("#modal_sobre");
+        const linkSobre = document.querySelector("#link_sobre");
+        const closeSobre = document.querySelector("#closeSobre");
+
+        linkSobre.onclick = function () {
+         // body...
+         modalSobre.showModal();
+        };
+        closeSobre.onclick = function () {
+         // body...
+         modalSobre.close();
+        };
+        modalSobre.onclick = function () {
+         // body...
+         modalSobre.close();
+        };
+       </script>
+      </dialog>
+
+      <!-- PESQUISAR -->
+      <li
+       class="li_nav_bar3 nav_items"
+       onclick="openModalPesquisa(event)"
+      >
+       <a>
+        <svg
+         xmlns="http://www.w3.org/2000/svg"
+         width="16"
+         height="16"
+         fill="currentColor"
+         class="bi bi-search"
+         viewBox="0 0 16 16"
+        >
+         <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+         />
+        </svg>
+       </a>
+      </li>
+
+      <!-- LOGIN -->
+      <li class="li_nav_bar4 nav_items">
+       <a>LOGIN</a>
+      </li>
+     </ul>
+    </div>
+   </header>
+
+   <div class="content form_pesquisas_topo">
+    <form
+     id="form_pesquisa"
+     class="form_pesquisa"
+     role="search"
+    >
+     <button
+      type="button"
+      id="btn_fechar_pesquisa"
+      onclick="openModalPesquisa(event)"
+     >
+      ✖
+     </button>
+     <div id="btns_form_pesquisa">
+      <input
+       type="search"
+       name="search"
+       id="input_pesquisa"
+       placeholder="Pesquisar no site"
+       aria-label="search"
+       value=""
+      />
+
+      <button
+       onclick="filtro()"
+       id="btn_pesquisa"
+       type="submit"
+      >
+       BUSCAR
+      </button>
+     </div>
+    </form>
+
+    <script name="menuScript">
+     function openModalPesquisa(e) {
+      const form_pesquisas_topo = document.querySelector(".form_pesquisas_topo");
+      const drop_menu = document.querySelector(".drop_menu");
+      const link_drop_menu = document.querySelector(".link_drop_menu");
+
+      form_pesquisas_topo.classList.toggle("show");
+      form_pesquisas_topo.style.display == "none" ? form_pesquisas_topo.style.display = "flex" : form_pesquisas_topo.style.display == "none";
+  if (drop_menu.classList[1] == "shows") {
+       drop_menu.classList.toggle("shows");
+        link_drop_menu.dataset.content = "▶";
+      }
+
+
+      if (drop_menu.style.display == "block") {
+       drop_menu.style = "display: none";
+       link_drop_menu.dataset.content = "▶";
+      }
+     }
+     
+     
+
+     function openDropDownMenu(e) {
+      const li_nav_bar2 = document.querySelector(".li_nav_bar2");
+      const link_drop_menu = document.querySelector(".link_drop_menu");
+      const drop_menu = document.querySelector(".drop_menu");
+      const form_pesquisas_topo = document.querySelector(".form_pesquisas_topo");
+
+      if (form_pesquisas_topo.classList[2] == "show") {
+       form_pesquisas_topo.classList.toggle("show");
+      }
+      
+      drop_menu.classList.toggle("shows");
+      
+    if (drop_menu.classList[1] == "shows") {
+      link_drop_menu.dataset.content = "▼";
+    } else {
+       link_drop_menu.dataset.content = "▶";
+    }
+
+  /*if (drop_menu.style.display == "block") {
+   drop_menu.style = "display: none";
+   link_drop_menu.dataset.content = "▶";
+  } else if (drop_menu.style.display == "none") {
+       drop_menu.style = "display: block";
+       link_drop_menu.dataset.content = "▼";
+      }*/
+     }
+
+     function blink() {
+      const link_drop_menu = document.querySelector(".link_drop_menu");
+      link_drop_menu.dataset.content = "▶";
+     }
+     blink();
+
+    </script>
+    <script>
+     const handleClickOutside = event => {
+      let form_pesquisas_topo = document.querySelector(".form_pesquisas_topo");
+      let form_pesquisa = document.getElementById("form_pesquisa");
+
+      if (!form_pesquisa.contains(event.target)) {
+       console.log("bombou");
+       form_pesquisa.style.display = "none";
+       form_pesquisas_topo.style.display = "none";
+       document.removeEventListener("click", handleClickOutside, false);
+      }
+     };
+
+     function closeModalPesquisas() {
+      const form_pesquisas_topo = document.querySelector(".form_pesquisas_topo");
+      const body = document.querySelectorAll("#body");
+
+      if (form_pesquisas_topo.classList.contains("show")) {
+       console.log("if " + form_pesquisas_topo);
+       form_pesquisas_topo.classList.toggle("show");
+      }
+     }
+      
+    </script>
+   </div>
+   
+   RESPOSTA: 
+   
+   <style>
+  /* CSS para a cor das letras digitadas */
+  .highlight {
+    color: blue; 
+  }
+    /* Cor desejada */
+</style>
+
+<input type="search" id="input_pesquisa" placeholder="Pesquisar no site">
+
+<script>
+  const inputPesquisa = document.getElementById("input_pesquisa");
+
+  // Adiciona um ouvinte de eventos para o evento de entrada
+  inputPesquisa.addEventListener("input", function() {
+    const searchTerm = this.value.toLowerCase(); // Obtém o valor do input e converte para minúsculas
+    const textToHighlight = document.body.innerText.toLowerCase(); // Obtém todo o texto da página e converte para minúsculas
+
+    // Percorre todos os elementos com a classe 'highlight' e remove a classe
+    const highlightedElements = document.querySelectorAll(".highlight");
+    highlightedElements.forEach(function(element) {
+      element.classList.remove("highlight");
+    });
+
+    // Se o termo de pesquisa estiver vazio, saia da função
+    if (searchTerm === "") return;
+
+    // Encontra todas as ocorrências do termo de pesquisa no texto da página
+    const index = textToHighlight.indexOf(searchTerm);
+
+    // Se o termo de pesquisa for encontrado, adiciona a classe de destaque às letras correspondentes
+    if (index !== -1) {
+      const elementsToHighlight = document.querySelectorAll(`:not(input)[data-index="${index}"]`);
+      elementsToHighlight.forEach(function(element) {
+        element.classList.add("highlight");
+      });
+    }
+  });
+</script>
+ERRADA ACIMA
+
+<style>
+  /* CSS para a cor das letras digitadas */
+  .highlight {
+    color: blue; /* Cor desejada */
+  }
+</style>
+
+<input type="search" id="input_pesquisa" placeholder="Pesquisar no site">
+<script>
+  const inputPesquisa = document.getElementById("input_pesquisa");
+
+  inputPesquisa.addEventListener("input", function() {
+    const searchTerm = this.value.toLowerCase(); // Obtém o valor do input e converte para minúsculas
+    const textToHighlight = document.body.innerText.toLowerCase(); // Obtém todo o texto da página e converte para minúsculas
+
+    removeHighlights(); // Remove destaque existente
+
+    if (searchTerm === "") return; // Se o termo de pesquisa estiver vazio, saia da função
+
+    const index = textToHighlight.indexOf(searchTerm); // Encontra todas as ocorrências do termo de pesquisa no texto da página
+
+    if (index !== -1) {
+      const startIndex = textToHighlight.substring(0, index).split(" ").length - 1;
+      const endIndex = startIndex + searchTerm.split(" ").length;
+
+      const words = document.body.innerText.split(" ");
+      const highlightedWords = words.slice(startIndex, endIndex);
+
+      highlightedWords.forEach(word => {
+        const regex = new RegExp(word, "i");
+        document.body.innerHTML = document.body.innerHTML.replace(regex, `<span class="highlight">${word}</span>`);
+      });
+    }
+  });
+
+  // Função para remover o destaque existente
+  function removeHighlights() {
+    const highlights = document.querySelectorAll(".highlight");
+    highlights.forEach(highlight => {
+      highlight.outerHTML = highlight.innerHTML;
+    });
+  }
+</script>
+ERRADA
+
+<style>
+  /* CSS para a cor das letras digitadas */
+  #input_pesquisa::-webkit-search-decoration,
+  #input_pesquisa::-webkit-search-results-button,
+  #input_pesquisa::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  #input_pesquisa::selection {
+    background-color: transparent; /* Evita que a seleção de texto altere a cor de fundo */
+  }
+
+  #input_pesquisa::placeholder {
+    color: black; /* Cor padrão do placeholder */
+  }
+
+  #input_pesquisa:focus::placeholder {
+    color: transparent; /* Oculta o placeholder quando o campo de pesquisa está em foco */
+  }
+
+  #input_pesquisa {
+    color: black; /* Cor padrão do texto */
+  }
+
+  #input_pesquisa.highlight {
+    color: blue; /* Cor das letras digitadas */
+  }
+</style>
+
+<input type="search" id="input_pesquisa" placeholder="Pesquisar no site">
+
+<script>
+  const inputPesquisa = document.getElementById("input_pesquisa");
+
+  inputPesquisa.addEventListener("input", function() {
+    const searchTerm = this.value.toLowerCase(); // Obtém o valor do input e converte para minúsculas
+
+    const placeholder = this.placeholder.toLowerCase(); // Obtém o placeholder e converte para minúsculas
+
+    // Se o termo de pesquisa estiver vazio, remove a classe de destaque
+    if (searchTerm === "" || searchTerm === placeholder) {
+      this.classList.remove("highlight");
+      return;
+    }
+
+    // Adiciona a classe de destaque se o termo de pesquisa não estiver vazio
+    this.classList.add("highlight");
+  });
+</script>
+
+ERRADA
+
+<style>
+  /* CSS para a cor das letras digitadas */
+  .highlight {
+    color: blue; /* Cor das letras digitadas */
+  }
+</style>
+
+<input type="search" id="input_pesquisa" placeholder="Pesquisar no site">
+
+<main>
+  <section>
+    <p>Este é um exemplo de texto no main.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Este é um exemplo de texto no footer.</p>
+</footer>
+
+<script>
+  const inputPesquisa = document.getElementById("input_pesquisa");
+
+  inputPesquisa.addEventListener("input", function() {
+    const searchTerm = this.value.toLowerCase(); // Obtém o valor do input e converte para minúsculas
+
+    // Obtém todos os elementos de texto dentro de main, section e footer
+    const textElements = document.querySelectorAll("main, section, footer");
+
+    textElements.forEach(element => {
+      const paragraphs = element.getElementsByTagName("p");
+
+      Array.from(paragraphs).forEach(paragraph => {
+        const text = paragraph.innerText.toLowerCase();
+
+        // Verifica se o texto do parágrafo contém o termo de pesquisa
+        if (text.includes(searchTerm)) {
+          // Aplica a classe de destaque ao parágrafo
+          const highlightedText = text.replace(new RegExp(searchTerm, "gi"), match => `<span class="highlight">${match}</span>`);
+          paragraph.innerHTML = highlightedText;
+        } else {
+          // Remove a classe de destaque se não houver correspondência
+          paragraph.innerHTML = paragraph.innerText;
+        }
+      });
+    });
+  });
+</script>
+
+ERRADA
+
+<style>
+  /* CSS para a cor das letras digitadas */
+  .highlight {
+    color: blue; /* Cor das letras digitadas */
+  }
+</style>
+
+<input type="search" id="input_pesquisa" placeholder="Pesquisar no site">
+
+<main>
+  <section>
+    <h1>Este é um exemplo de título</h1>
+    <p>Este é um exemplo de parágrafo</p>
+    <label for="input_example">Este é um exemplo de label:</label>
+    <input type="text" id="input_example">
+  </section>
+</main>
+
+<footer>
+  <p>Este é um exemplo de texto no footer.</p>
+</footer>
+
+<script>
+  const inputPesquisa = document.getElementById("input_pesquisa");
+
+  inputPesquisa.addEventListener("input", function() {
+    const searchTerm = this.value.toLowerCase(); // Obtém o valor do input e converte para minúsculas
+
+    // Obtém todos os elementos de texto dentro de main, section e footer, exceto aqueles dentro de header
+    const textElements = document.querySelectorAll("main, section, footer");
+
+    textElements.forEach(element => {
+      const elements = element.querySelectorAll(":scope > :not(header) *"); // Seleciona todos os descendentes diretos, exceto os dentro de header
+
+      elements.forEach(el => {
+        if (el.tagName !== "INPUT") { // Ignora inputs para não alterar o valor dentro deles
+          const text = el.innerText.toLowerCase();
+
+          // Verifica se o texto do elemento contém o termo de pesquisa
+          if (text.includes(searchTerm)) {
+            // Aplica a classe de destaque ao texto correspondente
+            const highlightedText = text.replace(new RegExp(searchTerm, "gi"), match => `<span class="highlight">${match}</span>`);
+            el.innerHTML = highlightedText;
+          } else {
+            // Remove a classe de destaque se não houver correspondência
+            el.innerHTML = el.innerText;
+          }
+        }
+      });
+    });
+  });
+</script>
+
+ERRADA
+
+<style>
+  /* CSS para a cor das letras digitadas */
+  .highlight {
+    color: blue; /* Cor das letras digitadas */
+  }
+</style>
+
+<input type="search" id="input_pesquisa" placeholder="Pesquisar no site">
+
+<main>
+  <section>
+    <h1>Este é um exemplo de título</h1>
+    <p>Este é um exemplo de parágrafo</p>
+    <label for="input_example">Este é um exemplo de label:</label>
+    <input type="text" id="input_example">
+  </section>
+</main>
+
+<footer>
+  <p>Este é um exemplo de texto no footer.</p>
+</footer>
+
+<script>
+  const inputPesquisa = document.getElementById("input_pesquisa");
+  const textElements = document.querySelectorAll("main, section, footer");
+
+  inputPesquisa.addEventListener("input", function() {
+    const searchTerm = this.value.trim().toLowerCase(); // Obtém o valor do input e converte para minúsculas
+
+    textElements.forEach(element => {
+      const elements = element.querySelectorAll(":scope > :not(header) *"); // Seleciona todos os descendentes diretos, exceto os dentro de header
+
+      elements.forEach(el => {
+        if (el.tagName !== "INPUT") { // Ignora inputs para não alterar o valor dentro deles
+          const text = el.innerText.toLowerCase();
+
+          // Verifica se o texto do elemento contém o termo de pesquisa
+          if (searchTerm && text.includes(searchTerm)) {
+            // Aplica a classe de destaque ao texto correspondente
+            const highlightedText = text.replace(new RegExp(searchTerm, "gi"), match => `<span class="highlight">${match}</span>`);
+            el.innerHTML = highlightedText;
+          } else {
+            // Remove a classe de destaque se não houver correspondência ou se o campo de pesquisa estiver vazio
+            el.innerHTML = el.innerText;
+          }
+        }
+      });
+    });
+  });
+</script>
+ERRADA
+<style>
+  /* CSS para a cor das letras digitadas */
+  .highlight {
+    color: blue; /* Cor das letras digitadas */
+  }
+</style>
+
+<input type="search" id="input_pesquisa" placeholder="Pesquisar no site">
+
+<main>
+  <section>
+    <h1>Este é um exemplo de título</h1>
+    <p>Este é um exemplo de parágrafo</p>
+    <label for="input_example">Este é um exemplo de label:</label>
+    <input type="text" id="input_example">
+  </section>
+</main>
+
+<footer>
+  <p>Este é um exemplo de texto no footer.</p>
+</footer>
+
+<script>
+  const inputPesquisa = document.getElementById("input_pesquisa");
+  const textElements = document.querySelectorAll("main, section, footer");
+
+  inputPesquisa.addEventListener("input", function() {
+    const searchTerm = this.value.trim().toLowerCase(); // Obtém o valor do input e converte para minúsculas
+
+    textElements.forEach(element => {
+      const textNodes = getTextNodes(element); // Obtém todos os nós de texto dentro do elemento
+
+      textNodes.forEach(node => {
+        const text = node.nodeValue.trim().toLowerCase(); // Obtém o texto do nó de texto e converte para minúsculas
+
+        // Verifica se o texto do nó de texto contém o termo de pesquisa
+        if (searchTerm && text.includes(searchTerm)) {
+          const matches = getMatches(text, searchTerm); // Obtém todas as correspondências do termo de pesquisa no texto
+          
+          // Substitui o texto original pelo texto com as correspondências destacadas
+          const highlightedText = highlightMatches(text, matches);
+          node.parentNode.innerHTML = highlightedText;
+        } else {
+          // Restaura o estilo original se o campo de pesquisa estiver vazio ou não houver correspondências
+          node.parentNode.innerHTML = node.parentNode.innerHTML.replace(/<span class="highlight">|<\/span>/gi, "");
+        }
+      });
+    });
+  });
+
+  // Função para obter todos os nós de texto dentro de um elemento e seus descendentes
+  function getTextNodes(element) {
+    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+    const textNodes = [];
+
+    while (walker.nextNode()) {
+      textNodes.push(walker.currentNode);
+    }
+
+    return textNodes;
+  }
+
+  // Função para obter todas as correspondências do termo de pesquisa no texto
+  function getMatches(text, searchTerm) {
+    const regex = new RegExp(searchTerm, "gi");
+    const matches = [];
+
+    let match;
+    while ((match = regex.exec(text)) !== null) {
+      matches.push({ index: match.index, length: searchTerm.length });
+    }
+
+    return matches;
+  }
+
+  // Função para destacar as correspondências do termo de pesquisa no texto
+  function highlightMatches(text, matches) {
+    let highlightedText = text;
+
+    matches.forEach(match => {
+      highlightedText = highlightedText.substring(0, match.index) +
+                        `<span class="highlight">${highlightedText.substr(match.index, match.length)}</span>` +
+                        highlightedText.substring(match.index + match.length);
+    });
+
+    return highlightedText;
+  }
+</script>
+
+
+
+
+

@@ -1,0 +1,281 @@
+@media screen and (max-width: 800px) {
+  body {
+    display: flex;
+    flex-flow: column wrap;
+    max-width: 412px;
+  }
+ details {
+  width: 100%;
+  margin: 4px 0;
+  padding: 8px 16px;
+  color: #fff;
+  background: #000;
+  border: 1px solid #fff;
+ }
+
+ .secao img {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  width: 200px;
+  height: 265.14px;
+ }
+
+ sumary {
+  all: unset;
+  padding: 16px;
+  width: 50%;
+ }
+
+ .main > section {
+  display: flex;
+  flex-flow: column wrap;
+  border: 1px solid #57009d;
+ }
+
+ .li_nav_bar2 ul {
+  position: absolute;
+  left: -5px;
+  top: 34px;
+ }
+
+ .icone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 0;
+  padding-right: 8px;
+  padding-left: 0;
+ }
+
+ .icone img {
+  position: relative;
+  left: 0;
+  display: none;
+  width: 25px;
+  height: 25px;
+ }
+
+ .icone h1 {
+  font-size: 24px;
+  margin-left: 12px;
+ }
+
+ .imagem {
+  flex: 0;
+  display: none;
+ }
+
+ .navegador {
+  flex: 10%;
+ }
+
+ .navegador nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .navegador nav:nth-child(1) {
+  justify-content: flex-end;
+ }
+
+ #nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+ }
+
+ .li_nav_bar2 {
+  position: relative;
+  left: 0;
+ }
+
+ .li_nav_bar3 {
+  position: relative;
+  left: 0;
+ }
+
+ .li_nav_bar4 {
+  position: relative;
+  left: 0;
+ }
+
+ #sub_menu_search_mobile {
+  width: 280px;
+ }
+
+ .li_nav_bar3:hover #sub_menu_search_mobile {
+  position: relative;
+  left: -690px;
+  top: 45px;
+ }
+
+ #form_pesquisas {
+  width: 270px;
+ }
+
+ .form_pesquisas_topo {
+ position: relative;
+ left: -10;
+  transition:
+   opacity 3s ease,
+   visibility 3s ease;
+  opacity: 0;
+  visibility: hidden;
+
+  justify-content: flex-end;
+ }
+
+ .show {
+  opacity: 1 !important;
+  visibility: visible !important;
+ }
+
+ .drop_menu {
+  position: absolute;
+  left: -5px;
+  top: 34px;
+  transition:
+   opacity 3s ease, visibility 3s ease;
+  opacity: 0;
+  visibility: hidden; 
+ }
+
+ .shows {
+ visibility: visible; 
+  opacity: 1;
+ }
+
+ #form_pesquisa {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  padding: 12px 0;
+  position: relative;
+  left: -6px;
+ /*  margin: 12px;
+  border: 1px solid #000;
+  */
+ 
+ }
+
+ #btn_fechar_pesquisa {
+  position: relative;
+  top: -20px;
+  left: 385px;
+  width: 20px;
+  height: 20px;
+  margin: 0 0 12px;
+ }
+
+ #btns_form_pesquisa {
+  position: relative;
+  width: 300px;
+  left: 113px;
+ }
+
+ #input_pesquisa {
+  border: 1px solid #000;
+  width: 67%;
+ }
+ 
+ #input_pesquisar {
+  border: 1px solid #000;
+  width: 180px;
+ }
+
+
+ #btn_fechar_pesquisa {
+  padding: 0;
+  font-size: 24px;
+  color: #fdfdfd;
+  border: none;
+  background: none;
+  margin-right: 15px;
+ }
+
+ #btn_pesquisas {
+  padding: 10px 6px;
+ }
+}
+
+/*
+
+
+ #btn_nav_bar {
+  position: relative;
+  padding: 6px;
+  visibility: visible;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  background: #f9004d;
+  border: none;
+ }
+
+ #btn_nav_bar span {
+  margin: 2px 0;
+  width: 30px;
+  height: 3px;
+  background: #fdfdfd;
+  color: #fdfdfd;
+  border: 1px solid #fdfdfd;
+ }
+
+
+ #linksub_menu {
+  display: none;
+ }
+
+ #linksub_menu_mobile {
+  display: flex;
+  padding: 0;
+ }
+
+ #sub_menu {
+  display: none;
+ }
+
+ #sub_menu_mobile:target {
+  display: block;
+ }
+ 
+ .menu_nav_bar {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+ }
+
+ .links_nav_bar {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 6px 0 6px 0;
+  width: 100%;
+ }
+
+ .links_nav_bar h5 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-decoration: none;
+  color: #fdfdfd;
+  padding-left: 3px;
+  width: 100%;
+ }
+
+ .links_nav_bar h5 a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-decoration: none;
+  text-align: start;
+  color: #fdfdfd;
+ }
+*/

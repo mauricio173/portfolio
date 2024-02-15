@@ -1,0 +1,61 @@
+.pai {
+ display: block;
+ background: red;
+ margin: 4px 0;
+ width: 540px;
+ padding: 8px 16px;
+/* 
+ padding-right: 16px;*/
+ border: 1px solid #fff;
+}
+
+/* ul li */
+.pai .filho {
+ position: relative;
+ border: 1px solid green;
+}
+
+/* li ul */
+li.filho:hover .filho2 {
+ display: flex;
+ flex-flow: column wrap;
+ background: red;
+ width: 361.714px;
+ z-index: 77;
+}
+
+li ul.filho2 {
+ position: absolute;
+ left: 0;
+ top: 34px;
+ display: none;
+}
+
+li ul.filho2 p {
+ padding: 0 0 0 6px;
+}
+
+@media screen and (max-width: 800px) {
+  .pai {
+   display: block;
+   width: 362.86px;
+  }
+
+}
+
+.icone h1 {
+ transition: opacity 3s ease, visibility 3s ease; 
+  opacity: 0; 
+  visibility: hidden; 
+}
+
+.showes {
+ opacity: 1 !important;
+  visibility: visible !important;
+}
+
+ .highlight {
+ padding: 0;
+ margin: 0;
+    color: blue; 
+  }

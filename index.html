@@ -1,0 +1,1252 @@
+<!doctype html>
+<html>
+ <head>
+  <meta
+   http-equiv="content-type"
+   content="text/html; charset=utf-8"
+  />
+  <meta
+   name="viewport"
+   content="width=device-width, initial-scale=1.0"
+  />
+  <link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+   rel="stylesheet"
+   integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+   crossorigin="anonymous"
+  />
+  <link
+   rel="stylesheet"
+   href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+  />
+  <title></title>
+  <script>
+   function conLog() {
+    const navA = document.querySelectorAll("#nav li a");
+    const nav = document.querySelectorAll("#nav li");
+    const body = document.querySelector("#body");
+    const bodys = document.querySelectorAll("#body");
+    const bodyLarg = document.querySelector("#body").style.width;
+
+    /*
+      console.log(bodyLarg.value);
+    console.log("body");
+    console.log("bodys");
+    console.log(body);
+    console.log(bodys);
+    console.log(navA[6]);
+    console.log(nav[6]);
+    */
+   }
+  // conLog();
+
+   function toggleLayout() {
+    var body = document.body;
+    // Verifica se a classe "desktop-layout" está presente no corpo da página
+    var isDesktopLayout = body.classList.contains("desktop-layout");
+
+    // Se estiver no layout desktop, muda para mobile e vice-versa
+    if (isDesktopLayout) {
+     body.classList.remove("desktop-layout");
+     body.classList.add("mobile-layout");
+    } else {
+     body.classList.remove("mobile-layout");
+     body.classList.add("desktop-layout");
+    }
+   }
+  </script>
+  <link
+   rel="stylesheet"
+   href="styles.css"
+   type="text/css"
+  />
+  <link
+   rel="stylesheet"
+   href="mobile.css"
+   type="text/css"
+  />
+  <link
+   rel="stylesheet"
+   href="hover.css"
+   type="text/css"
+  />
+  <link
+   rel="stylesheet"
+   href="card.css"
+   type="text/css"
+  />
+  <link
+   rel="stylesheet"
+   href="ref.css"
+   type="text/css"
+  />
+  <script
+   src="https://code.jquery.com/jquery-3.7.1.js"
+   integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+   crossorigin="anonymous"
+  ></script>
+ </head>
+ <body
+  id="body"
+  class=""
+  style=""
+ >
+  <p
+   id="texto"
+   class="text-danger"
+  ></p>
+  <div class="content principal">
+   <header class="container-fluid header">
+    <div
+     class="icone"
+     onclick="functionIcone()"
+    >
+     <img
+      class=""
+      src="ic-logo.png"
+      alt="Logotipo do site"
+     />
+     <h1>Port<span style="color: #f9004d !important">fólio</span></h1>
+
+<script>
+const classSelector = document.querySelector(".icone h1");
+function functionIcone() {
+  classSelector.classList.toggle('showes')
+console.log(classSelector);
+}
+functionIcone();
+</script>
+    </div>
+
+    <div class="imagem">
+     <span> </span>
+     <span> </span>
+    </div>
+
+    <div class="navegador">
+     <ul id="nav">
+      <!-- INÍCIO -->
+      <li class="li_nav_bar1 nav_items">
+       <a>INÍCIO</a>
+      </li>
+
+      <!-- MAIS -->
+      <li
+       class="li_nav_bar2 nav_items"
+       onclick="openDropDownMenu(event)"
+      >
+       <a class="link_drop_menu">MAIS&nbsp;</a>
+       <ul
+       name="menuDrop"
+        class="drop_menu"
+       
+       >
+        <li>
+         <a
+          id="link_sobre"
+          href="#sobre"
+          >SOBRE</a
+         >
+        </li>
+        <li><a>CONTATO</a></li>
+        <li><a>PROJETOS</a></li>
+       </ul>
+      </li>
+
+      <dialog id="modal_sobre">
+       <p
+        style=""
+        class=""
+       >
+        Multiplique os seus resultados, através de um sistema Web integrado. Sua empresa estruturada profissionalmente,
+        perfeita para seus clientes.
+        <br />
+        <input
+         type="button"
+         name="closeSobre"
+         id="closeSobre"
+         value="FECHAR"
+        />
+       </p>
+       <script type="text/javascript">
+        const modalSobre = document.querySelector("#modal_sobre");
+        const linkSobre = document.querySelector("#link_sobre");
+        const closeSobre = document.querySelector("#closeSobre");
+
+        linkSobre.onclick = function () {
+         // body...
+         modalSobre.showModal();
+        };
+        closeSobre.onclick = function () {
+         // body...
+         modalSobre.close();
+        };
+        modalSobre.onclick = function () {
+         // body...
+         modalSobre.close();
+        };
+       </script>
+      </dialog>
+
+      <!-- PESQUISAR -->
+      <li
+       class="li_nav_bar3 nav_items"
+       onclick="openModalPesquisa(event)"
+      >
+       <a>
+        <svg
+         xmlns="http://www.w3.org/2000/svg"
+         width="16"
+         height="16"
+         fill="currentColor"
+         class="bi bi-search"
+         viewBox="0 0 16 16"
+        >
+         <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+         />
+        </svg>
+       </a>
+      </li>
+
+      <!-- LOGIN -->
+      <li class="li_nav_bar4 nav_items">
+       <a href="../Login/index.html">LOGIN</a>
+      </li>
+     </ul>
+    </div>
+   </header>
+
+   <div class="content form_pesquisas_topo">
+    <form
+     id="form_pesquisa"
+     class="form_pesquisa"
+     role="search"
+    >
+     <button
+      type="button"
+      id="btn_fechar_pesquisa"
+      onclick="openModalPesquisa(event)"
+     >
+      ✖
+     </button>
+     <div id="btns_form_pesquisa">
+      <input
+       type="search"
+       name="search"
+       id="input_pesquisa"
+       placeholder="Pesquisar no site"
+       aria-label="search"
+       value=""
+      />
+
+      <!-- onclick="filtro()"-->
+      <button
+       id="btn_pesquisa"
+       type="submit"
+      >
+       BUSCAR
+      </button>
+     </div>
+    </form>
+
+    <script name="menuScript">
+     function openModalPesquisa(e) {
+      const form_pesquisas_topo = document.querySelector(".form_pesquisas_topo");
+      const drop_menu = document.querySelector(".drop_menu");
+      const link_drop_menu = document.querySelector(".link_drop_menu");
+
+      form_pesquisas_topo.classList.toggle("show");
+      form_pesquisas_topo.style.display == "none" ? form_pesquisas_topo.style.display = "flex" : form_pesquisas_topo.style.display == "none";
+  if (drop_menu.classList[1] == "shows") {
+       drop_menu.classList.toggle("shows");
+        link_drop_menu.dataset.content = "▶";
+      }
+
+
+      if (drop_menu.style.display == "block") {
+       drop_menu.style = "display: none";
+       link_drop_menu.dataset.content = "▶";
+      }
+     }
+     
+     
+
+     function openDropDownMenu(e) {
+      const li_nav_bar2 = document.querySelector(".li_nav_bar2");
+      const link_drop_menu = document.querySelector(".link_drop_menu");
+      const drop_menu = document.querySelector(".drop_menu");
+      const form_pesquisas_topo = document.querySelector(".form_pesquisas_topo");
+
+      if (form_pesquisas_topo.classList[2] == "show") {
+       form_pesquisas_topo.classList.toggle("show");
+      }
+      
+      drop_menu.classList.toggle("shows");
+      
+    if (drop_menu.classList[1] == "shows") {
+      link_drop_menu.dataset.content = "▼";
+    } else {
+       link_drop_menu.dataset.content = "▶";
+    }
+
+  /*if (drop_menu.style.display == "block") {
+   drop_menu.style = "display: none";
+   link_drop_menu.dataset.content = "▶";
+  } else if (drop_menu.style.display == "none") {
+       drop_menu.style = "display: block";
+       link_drop_menu.dataset.content = "▼";
+      }*/
+     }
+
+     function blink() {
+      const link_drop_menu = document.querySelector(".link_drop_menu");
+      link_drop_menu.dataset.content = "▶";
+     }
+     blink();
+
+    </script>
+    
+    <script>
+  
+  const inputpesquisa = document.querySelector("#input_pesquisa");
+
+  function pesquisaPagina() {
+  
+  console.log("idSelector: " + inputpesquisa.value);
+  
+  }
+  pesquisaPagina();
+  function simularClique() {
+    const valorInput = document.getElementById("input_pesquisa");
+    
+    // Verifica se o valor do input não está vazio
+    if (valorInput !== "") {
+        // Cria um elemento 'a' temporário
+        const tempLink = document.createElement("a");
+        tempLink.href = "#" + valorInput;
+  console.log("idSelector: " + tempLink);
+        
+        // Adiciona o elemento temporário ao corpo do documento
+        document.body.appendChild(tempLink);
+        
+        // Simula o clique no elemento temporário
+        tempLink.click();
+        
+        // Remove o elemento temporário do corpo do documento
+        document.body.removeChild(tempLink);
+    }
+}
+  
+  inputpesquisa.addEventListener("input", simularClique);
+</script>
+
+    <script>
+     const handleClickOutside = event => {
+      let form_pesquisas_topo = document.querySelector(".form_pesquisas_topo");
+      let form_pesquisa = document.getElementById("form_pesquisa");
+
+      if (!form_pesquisa.contains(event.target)) {
+       console.log("bombou");
+       form_pesquisa.style.display = "none";
+       form_pesquisas_topo.style.display = "none";
+       document.removeEventListener("click", handleClickOutside, false);
+      }
+     };
+
+     function closeModalPesquisas() {
+      const form_pesquisas_topo = document.querySelector(".form_pesquisas_topo");
+      const body = document.querySelectorAll("#body");
+
+      if (form_pesquisas_topo.classList.contains("show")) {
+       console.log("if " + form_pesquisas_topo);
+       form_pesquisas_topo.classList.toggle("show");
+      }
+     }
+      
+    </script>
+   </div>
+
+   <main class="container-fluid main">
+    <section
+     class="secao"
+     id="sobre"
+    >
+     <h1>Sobre</h1>
+     <div class="">
+      <p class="digitando paragrafo">
+       Multiplique os resultados da sua empresa, tendo uma forte presença no digital. Imagem visual, insights de seus
+       clientes além de uma inteligência de negócios que vai te ajudar a promover as melhores ofertas com base no fluxo
+       do seu negócio.
+      </p>
+
+      <img
+       src="bg-prog.jpeg"
+       alt="background seção sobre!"
+      />
+     </div>
+     <script>
+      function digitar() {
+       const paragrafo = document.querySelector(".paragrafo");
+       const digitando = document.querySelector(".digitando");
+
+       function efeitoDigitando(el) {
+        const arrayTexto = el.innerHTML.split("");
+        paragrafo.style = "visibility: visible;";
+        el.innerHTML = "";
+        arrayTexto.forEach((item, index) => {
+         setTimeout(() => {
+          el.innerHTML += item;
+         }, 75 * index);
+        });
+       }
+       efeitoDigitando(digitando);
+      }
+      digitar();
+     </script>
+    </section>
+    <section class="secao"></section>
+    <section class="secao"></section>
+   </main>
+
+
+
+   <footer class="container-fluid footer"></footer>
+  </div>
+
+  <span>
+   <button
+    onclick="toggleLayout()"
+    class="btn_layout"
+   >
+    Alterar Layout
+   </button>
+   <button
+    type="button"
+    id="size"
+   >
+    SIZE
+   </button>
+
+   <a
+    id="link_body"
+    class="text-white"
+    style="text-decoration: none"
+    >Body</a
+   >
+   <dialog id="modal_body">
+    <span>
+     <div
+      style="
+       margin: 20px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       gap: 20px;
+       flex-flow: column wrap;
+      "
+     >
+      <br />
+      <label id="sizeA"></label>
+      <label id="sizeBody"></label>
+      <br /><br />
+      <div style="">
+       <label id="sizeBodys"></label>
+       <br /><br />
+       <label id="sizeBodyes"></label>
+      </div>
+
+      <script>
+       const body = document.querySelector("#body");
+       const size = document.querySelector("#size");
+       const sizeA = document.querySelector("#sizeA");
+       const sizeBody = document.querySelector("#sizeBody");
+
+       size.addEventListener("click", function () {
+        const larg = window.innerWidth;
+        const alt = window.innerHeight;
+        sizeA.style = "color: #fff;";
+        sizeA.innerHTML = `
+         sizeClick: <br>
+         Janela: <br>
+         Largura: ${larg}px <br>
+         Altura: ${alt}px
+        `;
+        const largBody = body.clientWidth;
+        const altBody = body.clientHeight;
+        sizeBody.style = "color: #fff;";
+        sizeBody.innerHTML = `
+         sizeClick: <br>
+         Body: <br>
+         Largura: ${largBody}px <br>
+         Altura: ${altBody}px
+        `;
+       });
+
+       function viewSize() {
+        const larg = window.innerWidth;
+        const alt = window.innerHeight;
+        sizeA.style = "color: #fff;";
+        sizeA.innerHTML = `
+         viewSize: <br>
+         Janela: <br>
+         Largura: ${larg}px <br>
+         Altura: ${alt}px
+        `;
+        const largBody = body.clientWidth;
+        const altBody = body.clientHeight;
+        sizeBody.style = "color: #fff;";
+        sizeBody.innerHTML = `
+         viewSize: <br>
+         Body: <br>
+         Largura: ${largBody}px <br>
+         Altura: ${altBody}px
+        `;
+       }
+       viewSize();
+       tela();
+
+       function tela() {
+        const sizeBodys = document.querySelector("#sizeBodys");
+        const largBody = body.clientWidth;
+        const altBody = body.clientHeight;
+        sizeBodys.style = "color: #fff;";
+        sizeBodys.innerHTML = `
+             tela: <br>
+             Body Size: <br>
+             Largura: ${largBody}px <br>
+             Altura: ${altBody}px
+            `;
+
+        const sizeBodyes = document.querySelector("#sizeBodyes");
+        const larg = window.innerWidth;
+        const alt = window.innerHeight;
+        sizeBodyes.style = "color: #fff;";
+        sizeBodyes.innerHTML = `
+         tela: <br>
+         Janela: <br>
+         Largura: ${larg}px <br>
+         Altura: ${alt}px
+        `;
+       }
+      </script>
+     </div>
+
+     <br />
+     <br />
+     <br />
+     <div class="">
+      <br />
+      <input
+       type="number"
+       name="largura2"
+       id="largura2"
+       placeholder="largura2"
+      />
+      <br />
+      <input
+       type="number"
+       name="altura2"
+       id="altura2"
+       placeholder="altura2"
+      />
+      <br />
+      <input
+       type="number"
+       name="padding2"
+       id="padding2"
+       placeholder="padding2"
+      />
+      <br />
+      <input
+       type="number"
+       name="margin2"
+       id="margin2"
+       placeholder="margin2"
+      />
+      <br />
+      <input
+       type="button"
+       name="alterar2"
+       id="alterar2"
+       value="alterar2"
+      />
+      <br />
+
+      <script>
+       const alterar2 = document.querySelector("#alterar2");
+
+       alterar2.addEventListener("click", () => {
+        const body = document.querySelector("#body");
+        const largura = document.querySelector("#largura2");
+        const altura = document.querySelector("#altura2");
+        const padding = document.querySelector("#padding2");
+        const margin = document.querySelector("#margin2");
+        const bodys = document.body;
+
+        //body.style.border = "2px solid #fff";
+
+        var style = body.currentStyle || window.getComputedStyle(body);
+        //  display("Current marginTop: " + style.margin);
+
+        console.log(
+         "Current margin top: " +
+          style.marginTop +
+          "\nCurrent margin direita: " +
+          style.marginRight +
+          "\nCurrent margin baixo: " +
+          style.marginBottom +
+          "\nCurrent margin esquerda: " +
+          style.marginLeft
+        );
+        console.log(
+         "Current padding top: " +
+          style.paddingTop +
+          "\nCurrent padding direita: " +
+          style.paddingRight +
+          "\nCurrent padding baixo: " +
+          style.paddingBottom +
+          "\nCurrent padding esquerda: " +
+          style.paddingLeft
+        );
+        // Atribui a largura e altura ao body
+        body.style.width = largura.value + "px";
+        body.style.height = altura.value + "px";
+        body.style.padding = padding.value + "px";
+        body.style.margin = margin.value + "px auto";
+
+        /*
+        console.log("Largura do body 2: " + body.clientWidth);
+        console.log("Altura do body 2: " + body.clientHeight);
+        console.log("Padding do body 2: " + body.clientWidth);
+        console.log("Margin do body 2: " + body.style.margin);
+        */
+        // Limpa os campos de entrada
+        document.querySelector("#largura2").value = "";
+        document.querySelector("#altura2").value = "";
+        document.querySelector("#padding2").value = "";
+        document.querySelector("#margin2").value = "";
+        tela();
+        viewSize();
+       });
+      </script>
+     </div>
+
+     <br />
+     <input
+      type="button"
+      name="close_link_body"
+      id="close_link_body"
+      value="FECHAR"
+     />
+    </span>
+    <script type="text/javascript">
+     const modal_body = document.querySelector("#modal_body");
+     const link_body = document.querySelector("#link_body");
+     const close_link_body = document.querySelector("#close_link_body");
+
+     link_body.onclick = function () {
+      // body...
+      modal_body.showModal();
+     };
+     close_link_body.onclick = function () {
+      // body...
+      modal_body.close();
+     };
+     modal_body.onclick = function () {
+      // body...
+      modal_body.close();
+     };
+    </script>
+   </dialog>
+  </span>
+
+  <span name="scripts">
+   <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"
+   ></script>
+   <script
+    style="z-index: 999"
+    src="https://cdn.jsdelivr.net/npm/eruda"
+    onload="eruda.init()"
+   ></script>
+<!--<script>
+  const inputPesquisa = document.getElementById("input_pesquisa");
+
+  inputPesquisa.addEventListener("input", function() {
+    const searchTerm = this.value.toLowerCase(); // Obtém o valor do input e converte para minúsculas
+
+    // Obtém todos os elementos de texto dentro de main, section e footer, exceto aqueles dentro de header
+    const textElements = document.querySelectorAll("main, section, footer");
+
+    textElements.forEach(element => {
+      const elements = element.querySelectorAll(":scope > :not(header) *"); // Seleciona todos os descendentes diretos, exceto os dentro de header
+console.log(elements);
+      elements.forEach(el => {
+        if (el.tagName !== "INPUT") { // Ignora inputs para não alterar o valor dentro deles
+          const text = el.innerText.toLowerCase();
+
+          // Verifica se o texto do elemento contém o termo de pesquisa
+          if (text.includes(searchTerm)) {
+            // Aplica a classe de destaque ao texto correspondente
+            const highlightedText = text.replace(new RegExp(searchTerm, "gi"), match => `<span class="highlight">${match}</span>`);
+            el.innerHTML = highlightedText;
+          } else {
+            // Remove a classe de destaque se não houver correspondência
+            el.innerHTML = el.innerText;
+          }
+        }
+      });
+    });
+  });
+</script>   -->
+<!--   <script>
+  const inputPesquisa = document.getElementById("input_pesquisa");
+
+  inputPesquisa.addEventListener("input", function() {
+    const searchTerm = this.value.toLowerCase(); // Obtém o valor do input e converte para minúsculas
+
+    // Obtém todos os elementos de texto dentro de main, section e footer
+    const textElements = document.querySelectorAll("main, section, footer, h1, h2, h3, h4, h5, h6:not(h1>span)");
+
+    textElements.forEach(element => {
+   
+      
+      const paragraphs = element.getElementsByTagName("p");
+
+      Array.from(paragraphs).forEach(paragraph => {
+        const text = paragraph.innerText;
+
+        // Verifica se o texto do parágrafo contém o termo de pesquisa
+        if (text.includes(searchTerm)) {
+          // Aplica a classe de destaque ao parágrafo
+          const highlightedText = text.replace(new RegExp(searchTerm, "gi"), match => `<span class="highlight">${match}</span>`);
+          paragraph.innerHTML = highlightedText;
+        } else {
+          // Remove a classe de destaque se não houver correspondência
+          paragraph.innerHTML = paragraph.innerText;
+        }
+      });
+    });
+  });
+</script>-->
+<!-- <script>
+  const inputPesquisa = document.getElementById("input_pesquisa");
+  const textElements = document.querySelectorAll("main, section, footer");
+
+  inputPesquisa.addEventListener("input", function() {
+    const searchTerm = this.value.trim().toLowerCase(); // Obtém o valor do input e converte para minúsculas
+
+    textElements.forEach(element => {
+      const elements = element.querySelectorAll(":scope > :not(header) *"); // Seleciona todos os descendentes diretos, exceto os dentro de header
+
+      elements.forEach(el => {
+        if (el.tagName !== "INPUT") { // Ignora inputs para não alterar o valor dentro deles
+          const text = el.innerText.toLowerCase();
+
+          // Verifica se o texto do elemento contém o termo de pesquisa
+          if (searchTerm && text.includes(searchTerm)) {
+            // Aplica a classe de destaque ao texto correspondente
+            const highlightedText = text.replace(new RegExp(searchTerm, "gi"), match => `<span class="highlight">${match}</span>`);
+            el.innerHTML = highlightedText;
+          } else {
+            // Remove a classe de destaque se não houver correspondência ou se o campo de pesquisa estiver vazio
+            el.innerHTML = el.innerText;
+          }
+        }
+      });
+    });
+  });
+</script>-->
+
+   <script>
+    const form_pesquisa = document.querySelector(".form_pesquisa");
+    const btn_pesquisa = document.querySelector("#btn_pesquisa");
+    const input_pesquisa = document.querySelector("#input_pesquisa");
+    const bodys = document.querySelector("#body");
+
+    form_pesquisa.addEventListener("submit", event => {
+     event.preventDefault();
+    });
+
+    /* input_pesquisa.addEventListener("input", (e) => {
+  let inputed = e.target.value.toLowerCase()
+      const bodys = document.querySelector("#body");
+      const principal = document.querySelector(".principal");
+      const texto = document.querySelector("#texto");
+      console.log(principal);
+      console.log(inputed);
+    texto.innerText = `${inputed}`;
+})*/
+    function filtros() {
+     let inputed = input_pesquisa.value.toLowerCase();
+     const bodys = document.querySelector("#body");
+     const principal = document.querySelector(".principal");
+     const texto = document.querySelector("#texto");
+     console.log(principal);
+     console.log(inputed);
+     /*      principal.forEach((item, index) => {
+       console.log(item);
+		
+	});*/
+     /* const filtro = principal.find( el => el.textContent == inputed);*/
+     texto.innerText = `${inputed}`;
+    }
+    // filtros();
+
+function filtros() {
+     var searchText = document.getElementById("input_pesquisa").value.toLowerCase();
+     var elements = document.getElementsByTagName("*");
+     //var elements = document.body;
+     var found = false;
+     console.log(elements);
+     for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+
+      if (element.innerText.toLowerCase().includes(searchText)) {
+       console.log(searchText);
+       element.scrollIntoView({ behavior: "smooth", block: "center" });
+       found = true;
+       break;
+      }
+     }
+
+     if (!found) {
+      alert("Texto não encontrado na página.");
+     }
+    }
+
+function filtro() {
+  
+var searchs = document.getElementById("input_pesquisa").value.toLowerCase();
+var searchText = document.getElementById("input_pesquisa").value.toLowerCase();
+var elements = document.querySelectorAll("body :not(.header):not(script):not(style):not(iframe):not(textarea):not(input):not(select):not(button):not(img):not(audio):not(video):not(canvas):not(svg):not(figure):not(ul):not(ol):not(li):not(table):not(tr):not(td):not(th):not(form):not(a):not(#modal_sobre):not(#link_sobre):not(#closeSobre):not(.drop_menu):not(#nav):not(h1 > span):not(.nav_items):not(.navegador):not(header):not(.principal > header)");
+var found = false;
+elements.forEach(function (element, index) {
+if (element.textContent.toLowerCase().includes(searchText.trim())) {
+  element.style.color = "yellow";
+console.log(element);
+element.scrollIntoView({ behavior: "smooth", block: "center" });
+found = true;
+return;
+}
+});
+
+if (!found) {
+alert("Texto não encontrado na página.");
+}
+}
+//filtro();
+
+
+
+    /*
+function searchInPage() {
+    var searchText = document.getElementById('input_pesquisa').value.toLowerCase();
+    var textElements = document.querySelectorAll('body *:not(.header):not(script):not(style):not(iframe):not(textarea):not(input):not(select):not(button):not(img):not(audio):not(video):not(canvas):not(svg):not(figure):not(ul):not(ol):not(li):not(table):not(tr):not(td):not(th):not(form):not(a):not(#modal_sobre):not(#link_sobre):not(#closeSobre):not(.drop_menu):not(#nav):not(h1 > span)');
+    var found = false;
+
+    textElements.forEach(function(element) {
+        var elementType = element.tagName.toLowerCase();
+        var elementText = element.textContent.toLowerCase();
+        if (elementType === 'label') {
+            var labelFor = element.getAttribute('for');
+            if (labelFor) {
+                var correspondingInput = document.getElementById(labelFor);
+                if (correspondingInput) {
+                    elementText = correspondingInput.value.toLowerCase();
+                }
+            }
+        }
+
+        if (elementText.includes(searchText)) {
+            element.style.color = 'yellow';
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            found = true;
+        } else {
+            element.style.color = ''; // Reset color
+        }
+
+        if (elementText === searchText) {
+            element.style.backgroundColor = 'yellow';
+        } else {
+            element.style.backgroundColor = ''; // Reset background color
+        }
+    });
+
+    if (!found) {
+        alert('Texto não encontrado na página.');
+    }
+}
+*/
+    /*function searchInPage() {
+    var searchText = document.getElementById('input_pesquisa').value.toLowerCase();
+    var textElements = document.querySelectorAll('body *:not(.header):not(script):not(style):not(iframe):not(textarea):not(input):not(select):not(button):not(img):not(audio):not(video):not(canvas):not(svg):not(figure):not(ul):not(ol):not(li):not(table):not(tr):not(td):not(th):not(form):not(a):not(#modal_sobre):not(#link_sobre):not(#closeSobre):not(.drop_menu):not(#nav):not(h1 > span)');
+    var found = false;
+
+    textElements.forEach(function(element) {
+        var elementType = element.tagName.toLowerCase();
+        var elementText = element.textContent.toLowerCase();
+        if (elementType === 'label') {
+            var labelFor = element.getAttribute('for');
+            if (labelFor) {
+                var correspondingInput = document.getElementById(labelFor);
+                if (correspondingInput) {
+                    elementText = correspondingInput.value.toLowerCase();
+                }
+            }
+        }
+
+        if (elementText.includes(searchText)) {
+            element.style.color = 'yellow';
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            found = true;
+        } else {
+            element.style.color = ''; // Reset color
+        }
+
+        if (elementText === searchText) {
+            element.style.backgroundColor = 'yellow';
+        } else {
+            element.style.backgroundColor = ''; // Reset background color
+        }
+    });
+
+    if (!found) {
+        alert('Texto não encontrado na página.');
+    }
+
+    // Reverter as alterações após 5 segundos
+    setTimeout(function() {
+        textElements.forEach(function(element) {
+            element.style.color = ''; // Reset color
+            element.style.backgroundColor = ''; // Reset background color
+        });
+    }, 5000);
+}*/
+
+
+   /* function searchInPage() {
+     var searchText = document.getElementById("input_pesquisa").value.toLowerCase();
+     var textElements = document.querySelectorAll(
+      "body *:not(.header):not(script):not(style):not(iframe):not(textarea):not(input):not(select):not(button):not(img):not(audio):not(video):not(canvas):not(svg):not(figure):not(ul):not(ol):not(li):not(table):not(tr):not(td):not(th):not(form):not(a):not(#modal_sobre):not(#link_sobre):not(#closeSobre):not(.drop_menu):not(#nav):not(h1 > span)"
+     );
+     var found = false;
+
+     textElements.forEach(function (element) {
+      var elementType = element.tagName.toLowerCase();
+      var elementText = element.textContent.toLowerCase();
+      if (elementType === "label") {
+       var labelFor = element.getAttribute("for");
+       if (labelFor) {
+        var correspondingInput = document.getElementById(labelFor);
+        if (correspondingInput) {
+         elementText = correspondingInput.value.toLowerCase();
+        }
+       }
+      }
+
+      if (elementText.includes(searchText)) {
+       element.style.color = "yellow";
+       element.scrollIntoView({ behavior: "smooth", block: "center" });
+       found = true;
+      } else {
+       element.style.color = ""; // Reset color
+      }
+
+      if (elementText === searchText) {
+       element.style.backgroundColor = "yellow";
+      } else {
+       element.style.backgroundColor = ""; // Reset background color
+      }
+     });
+
+     if (!found) {
+      alert("Texto não encontrado na página.");
+     }
+
+     // Reverter as alterações após 5 segundos
+     setTimeout(function () {
+      textElements.forEach(function (element) {
+       element.style.color = ""; // Reset color
+       element.style.backgroundColor = ""; // Reset background color
+      });
+     }, 5000);
+    }
+    */
+   </script>
+   <script
+    type="text/javascript"
+    charset="utf-8"
+   >
+    function navi() {
+     const nav_items = document.querySelectorAll(".nav_items");
+     const form_pesquisas_topo = document.querySelector(".form_pesquisas_topo");
+     //console.log(nav_items);
+     if (form_pesquisas_topo.classList == "show") {
+     }
+     nav_items.forEach((item, index) => {});
+    }
+    navi();
+    document.body.addEventListener("onload", navi);
+
+    function closeNavs() {
+     const li_nav_bar2 = document.querySelector(".li_nav_bar2");
+     const li_nav_bar3 = document.querySelector(".li_nav_bar3");
+    }
+    navi();
+   </script>
+   <!--   <script type="text/javascript" charset="utf-8">
+      $(document).mousemove((event)=>{
+$('#texto').text("Mouse X: " + event.pageX + ", Mouse Y: " + event.pageY)
+      
+    })
+   </script>-->
+  </span>
+ </body>
+</html>
+
+<!--
+<main class="container-fluid main">
+     
+    <span>
+      <section class="container-fluid" style="width: 100%; margin: 16px 0; border: 1px solid #5dfffb">
+        <ul class="pai text-white">
+          <li class="filho">
+            <a>MENU ▶</a>
+            <ul class="filho2">
+              <li>
+                <p>
+                  ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM 
+                </p> 
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </span>
+
+    <span>
+    <section class="container-fluid" style="width: 100%">
+     <details>
+      <summary>HABILIDADES</summary>
+      <ul>
+       <li>HTML</li>
+       <li>CSS</li>
+       <li>JAVASCRIPT</li>
+       <li>C</li>
+       <li>C++</li>
+      </ul>
+     </details>
+
+     <details>
+      <summary>HTML</summary>
+      <p>Front-end e Back-end. Websites personalizados. Sistemas integrados. Frameworks. Inteligência de Negócios.</p>
+     </details>
+
+     <details>
+      <summary>HTML</summary>
+      <p>Aumente o lucro da sua empresa com soluções automatizadas.</p>
+     </details>
+
+     <details>
+      <summary>HTML</summary>
+      <p>Aumente o lucro da sua empresa com soluções automatizadas.</p>
+     </details>
+    </section>
+    </span>
+    
+    <span>
+      <section class="container-fluid" style="width: 100%; margin: 16px 0; border: 1px solid #5dfffb">
+     <details>
+      <summary>HTML</summary>
+      <p>Front-end e Back-end. Websites personalizados. Sistemas integrados. Frameworks. Inteligência de Negócios.</p>
+     </details>
+
+     <details>
+      <summary>HTML</summary>
+      <p>Front-end e Back-end. Websites personalizados. Sistemas integrados. Frameworks. Inteligência de Negócios.</p>
+     </details>
+
+     <details>
+      <summary>HTML</summary>
+      <p>Front-end e Back-end. Websites personalizados. Sistemas integrados. Frameworks. Inteligência de Negócios.</p>
+     </details>
+
+     <details>
+      <summary>HTML</summary>
+      <p>Front-end e Back-end. Websites personalizados. Sistemas integrados. Frameworks. Inteligência de Negócios.</p>
+     </details>
+    </section>
+    </span>
+
+    <span>
+      
+      <section class="container-fluid" style="width: 100%; margin: 16px 0; border: 1px solid #5dfffb">
+       <details>
+        <summary>HTML</summary>
+        <p>Front-end e Back-end. Websites personalizados. Sistemas integrados. Frameworks. Inteligência de Negócios.</p>
+       </details>
+      </section>
+    
+    </span>
+  
+    <span>
+      
+      <section class="container-fluid" style="width: 100%; margin: 16px 0; border: 1px solid #5dfffb">
+       <details>
+        <summary>HTML</summary>
+        <p>Front-end e Back-end. Websites personalizados. Sistemas integrados. Frameworks. Inteligência de Negócios.</p>
+       </details>
+      </section>
+    
+    </span>
+
+    <span>
+      
+      <section class="container-fluid" style="width: 100%; margin: 16px 0; border: 1px solid #5dfffb">
+       <details>
+        <summary>HTML</summary>
+        <p>Front-end e Back-end. Websites personalizados. Sistemas integrados. Frameworks. Inteligência de Negócios.</p>
+       </details>
+      </section>
+    
+    </span>
+
+    <span>
+    <section id="cartaobordaefeito" class="container-fluid" style="width: 100%; margin: 16px 0; border: 1px solid #5dfffb">
+    <div class="cartao" style="margin: 16px auto;">
+        <div class="conteudo">
+            <div class="traseira">
+                <div class="traseira-conteudo">
+                    <img src="ic-logo.png" />
+                    <strong>Passe o Mouse</strong>
+                </div>
+            </div>
+            <div class="frenteira">
+                <div class="img">
+                    <div class="circulos__dancante">
+                    </div>
+                    <div class="circulos__dancante" id="direita">
+                    </div>
+                    <div class="circulos__dancante" id="rodape">
+                    </div>
+                </div>
+                <div class="frenteira-conteudo">
+                    <small class="distintivo">Dev Web</small>
+                    <div class="descricao">
+                        <div class="titulo">
+                            <p class="titulo">
+                                <strong>Mauricio M</strong>
+                            </p>
+                        </div>
+                        <p class="cartao-rodape">
+                            Mauricio Dev Web GitHub &nbsp; | &nbsp; 2023
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    </span>
+
+    <span>
+    <section class="container-fluid modal_cartao_efeito" style="width: 100%; margin: 16px 0; border: 1px solid #5dfffb">
+     <details id="link_cartao_efeito">
+      <summary>
+        <a name="link_cartao_efeito" class="text-white" style="text-decoration: none">
+          Cartão com Efeito
+        </a>
+      </summary>
+     </details>
+
+     
+     <dialog id="modal_cartao_efeito">
+      <span>
+            
+        <iframe src="https://mauricio173.github.io/cartao-bd-efeito/" frameborder="0" scrolling="no" allowfullscreen>
+        
+        </iframe>
+        <br />
+         <input type="button" name="close_cartao_efeito" id="close_cartao_efeito" value="FECHAR" />
+      </span>
+      <script type="text/javascript">
+       const modal_cartao_efeito = document.querySelector("#modal_cartao_efeito");
+       const link_cartao_efeito = document.querySelector("#link_cartao_efeito");
+       const close_cartao_efeito = document.querySelector("#close_cartao_efeito");
+
+       link_cartao_efeito.onclick = function () {
+        // body...
+        modal_cartao_efeito.showModal();
+       };
+       close_cartao_efeito.onclick = function () {
+        // body...
+        modal_cartao_efeito.close();
+       };
+       
+       modal_cartao_efeito.onclick = function () {
+        // body...
+        modal_cartao_efeito.close();
+       };
+       
+      </script>
+     </dialog>
+    </section>
+    </span>
+
+    <span>
+    <section id="cartaoefeito" class="container-fluid" style="width: 100%; margin: 16px 0; border: 1px solid #5dfffb">
+     <details>
+      <summary>Cartão com Efeito</summary>
+      <p>Front-end e Back-end. Websites personalizados. Sistemas integrados. Frameworks. Inteligência de Negócios.</p>
+      <iframe src="https://mauricio173.github.io/cartao-bd-efeito/" frameborder="0" scrolling="no" allowfullscreen width="230" height="300" sandbox="allow-same-origin" 
+       ></iframe>
+     </details>
+    </section>
+    </span>
+
+    <span>
+    <section class="container-fluid">
+      <ul class="pai text-white">
+        <li class="filho">
+          <a>MENU ▶</a>
+          <ul class="filho2">
+            <li>
+              <p>
+                ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM ITEM 
+              </p> 
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    </span>
+
+    <span>
+    <section class="container-fluid"></section>
+    </span>
+    
+    <span>
+    <section class="container-fluid" style="width: 100%; height: 100%; margin: 16px 0; border: 1px solid #5dfffb">
+     
+     <iframe src="https://mouseanimation.vercel.app/" name="mouseanimation" width="100%" height="400px"></iframe>
+    </section>
+    </span>
+    
+    <span>
+    <section class="container-fluid" style="width: 100%; margin: 16px 0; border: 1px solid #5dfffb">
+     
+     <iframe src="https://www.homehost.com.br/" name="meu_iframe"></iframe>
+<p><a href="https://www.homehost.com.br/" target="meu_iframe">HomeHost</a></p>
+<p><a href="https://www.homehost.com.br/blog" target="meu_iframe">Blog HomeHost</a></p>
+<p><a href="https://www.w3schools.com" target="meu_iframe">W3Schools</a></p>
+    </section>
+    </span>
+    
+   </main>
+
+
+-->

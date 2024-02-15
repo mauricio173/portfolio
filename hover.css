@@ -1,0 +1,50 @@
+
+/*.li_nav_bar2:hover ul {
+ display: block;
+}*/
+
+.li_nav_bar1:hover, .li_nav_bar2:hover, .li_nav_bar3:hover, .li_nav_bar4:hover {
+}
+
+.li_nav_bar1:hover {
+  
+}
+
+.li_nav_bar2:hover {
+  
+}
+
+.li_nav_bar3:hover {
+  background: none;
+  border: none;
+}
+
+.li_nav_bar4:hover {
+  
+}
+
+
+#alterar2:hover {
+ background: #a6fc98;
+ color: #000;
+}
+
+
+#input_pesquisar:hover {
+ border: 1px solid #000;
+ box-shadow: 3px 2px 8px #986dff;
+}
+
+#btn_pesquisas:hover {
+ border: none;
+ box-shadow: 3px 2px 8px #a6fc98de;
+}
+
+.li_nav_bar3:hover #sub_menu_search_mobile {
+ display: flex;
+ position: absolute;
+ left: -245px;
+ top: 50px;
+}
+
+
